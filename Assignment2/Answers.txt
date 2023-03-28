@@ -1,0 +1,22 @@
+							PART 1
+
+1.	No, This is because the same inode number might appear in more than one file system. The inode number and file system ID would make a uniuqe identifier.
+
+2.      a. Yes, this is because symbolic links exist indepentent of its target.So a sym lick can easliy be changed to points to.
+
+ 	b. No, this is because if the sourse file is moved, changed or edited the sym lick becomes a dangling it can no longer be edited. eg: I tried editing the link with ln -s -f file5 file3, it ended up recovering file2 
+
+
+3.    	a. They don't have privilage 
+	b. Passwords are stored in a shadow directory where non-root users cannot access.
+							PART 2
+
+1. 	myfile, myfile2, myfile3: physical size(respectivly) 0M, 1.0M, 0M;Logical size(respectivly) 256M.
+	We notice that the physical size smaller than the logical size and this is because the data blockes containing zeros are not physically stored. In myfile3 1mb of zeros are being copied into a block after 255mb. while in myfile2 0mb of zeros are being copied after 256M;   
+2.	Answer will be in the diff file 3000test2.diff
+
+3. 	This is because the zero blocks are not stored in the physically. The actual block size is only written to the disk when it contains real/non-empty data. Therefore the size of the information on the file ends up being greater that the size of information stored on the disk.
+
+4.	It uses mmap() to allocate memory for the data that is being read from the file from outside the heap so as to prevent fragmentation.
+
+5. 	 Answer will be in the diff file 3000test5.diff
